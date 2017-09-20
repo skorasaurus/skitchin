@@ -14,7 +14,7 @@ String date = "2017-09-20";
 String inputFile = "../data/output.csv";
 int totalFrames = 3600;
 Location center = new Location(41.4706225, -81.63997);
-Integer zoom_start = 9;
+Integer zoom_start = 10;
 boolean recording = false;
 boolean HQ = false;
 boolean rotateBearing = true;
@@ -512,7 +512,7 @@ void draw() {
 
     int h_metro = metroCounts.get(frameCount);
     fill(255,51,51, 255);
-    text("Subways: ", xmargin + frameCount/hscale, height-ymargin-75);
+    text("Red Line: ", xmargin + frameCount/hscale, height-ymargin-75);
     textAlign(RIGHT);
     text(h_metro, xmargin + frameCount/hscale + 100, height-ymargin-75);
     textAlign(LEFT);
