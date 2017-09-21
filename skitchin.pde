@@ -334,7 +334,7 @@ void loadData() {
     busFrames.add(frame);
     busCounts.add(count);
     float h = busCounts.get(i);
-    c = color(0, 173, 253, lineAlpha);
+    c = color(0, 253, lineAlpha);
     int xmargin = 50;
     int ymargin = 40;
     int xaxisoffset = 5;
@@ -497,7 +497,7 @@ void draw() {
     noStroke();
 
     int h_bus = busCounts.get(frameCount);
-    fill(0, 173, 253, 255);
+    fill(217, 95, 2, 255);
     text("Buses: ", xmargin + frameCount/hscale, height - ymargin-105);
     textAlign(RIGHT);
     text(nfc(h_bus), xmargin + frameCount/hscale + 100, height - ymargin-105);
@@ -505,7 +505,7 @@ void draw() {
 
     int h_tram = tramCounts.get(frameCount);
     fill(124, 252, 0, 255);
-    text("Light Rail: ", xmargin + frameCount/hscale, height-ymargin-90);
+    text("Blue/Green: ", xmargin + frameCount/hscale, height-ymargin-90);
     textAlign(RIGHT);
     text(h_tram, xmargin + frameCount/hscale + 100, height-ymargin-90);
     textAlign(LEFT);
@@ -517,31 +517,10 @@ void draw() {
     text(h_metro, xmargin + frameCount/hscale + 100, height-ymargin-75);
     textAlign(LEFT);
 
-    int h_train = trainCounts.get(frameCount);
-    fill(255, 215, 0, 255);
-    text("Trains: ", xmargin + frameCount/hscale, height-ymargin-60);
-    textAlign(RIGHT);
-    text(h_train, xmargin + frameCount/hscale + 100, height-ymargin-60);
-    textAlign(LEFT);
-
-    int h_cablecar = cablecarCounts.get(frameCount);
-    fill(255,140,0, 255);
-    text("Cable Cars: ", xmargin + frameCount/hscale, height-ymargin-45);
-    textAlign(RIGHT);
-    text(h_cablecar, xmargin + frameCount/hscale + 100, height-ymargin-45);
-    textAlign(LEFT);
-
-    int h_ferry = ferryCounts.get(frameCount);
-    fill(255, 105, 180, 255);
-    text("Ferries: ", xmargin + frameCount/hscale, height-ymargin-30);
-    textAlign(RIGHT);
-    text(h_ferry, xmargin + frameCount/hscale + 100, height-ymargin-30);
-    textAlign(LEFT);
-
     fill(255);
     text("Total: ", xmargin + frameCount/hscale, height-ymargin-10);
     textAlign(RIGHT);
-    text(nfc(h_bus + h_train + h_tram + h_metro + h_cablecar + h_ferry), xmargin + frameCount/hscale + 100, height-ymargin-10);
+    text(nfc(h_bus + + h_tram + h_metro), xmargin + frameCount/hscale + 100, height-ymargin-10);
     textAlign(LEFT);
 
     if (day.equals("Monday")) monday = true;
@@ -577,12 +556,12 @@ void draw() {
 
       switch(vehicle_type) {
       case "bus":
-        c = color(0, 173, 253);
+        c = color(217, 95, 2);
         fill(c, 240);
         trip.plotBus();
         break;
       case "bus_service":
-        c = color(0, 173, 253);
+        c = color(217, 95, 2);
         fill(c, 240);
         trip.plotBus();
         break;
@@ -615,7 +594,7 @@ void draw() {
         fill(c, 200);
         trip.plotRide();
       case("funicular"):
-        c = color(0, 173, 253);
+        c = color(217, 95, 2);
         fill(c, 255);
         trip.plotRide();
       }
